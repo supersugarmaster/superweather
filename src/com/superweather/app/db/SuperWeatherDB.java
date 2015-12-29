@@ -61,13 +61,12 @@ public class SuperWeatherDB {
 	
 	//将city实例存储到数据库
 	public void saveCity(City city){
-		ContentValues values = new ContentValues();
 		if(city != null){
-			values.put("id", city.getId());
+			ContentValues values = new ContentValues();
 			values.put("city_name", city.getCityName());
 			values.put("city_code", city.getCityCode());
 			values.put("province_id", city.getProvinceId());
-			db.insert("city", null, values);
+			db.insert("City", null, values);
 		}
 	}
 	
@@ -93,11 +92,10 @@ public class SuperWeatherDB {
 	public void saveCounty(County county){
 		ContentValues values = new ContentValues();
 		if(county != null){
-			values.put("id", county.getId());
 			values.put("county_name", county.getCountyName());
 			values.put("county_code", county.getCountyCode());
 			values.put("city_id", county.getCityId());
-			db.insert("county", null, values);
+			db.insert("County", null, values);
 		}
 	}
 	
